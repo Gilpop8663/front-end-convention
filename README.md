@@ -8,13 +8,39 @@ HTML, CSS, JAVASCRIPT에 관련된 규칙을 정리한 문서입니다.
 
 ## HTML
 
+1. [HTML에서 class와 id를 사용하는 기준](#HTML에서-class와-id를-사용하는-기준)
+
+### HTML에서 class와 id를 사용하는 기준
+
+#### class
+
+CSS 속성을 줄 때 클래스를 이용합니다. 그 이유는 CSS 속성을 고치기 위해 class 명을 고치게 되어도 사이트 로직에 영향을 주지 않게 하기 위함입니다.
+
+#### id
+
+Javascript 코드에서 querySelector를 지정할 때 사용합니다.
+
+#### class와 id를 구분 지어 사용하는 컨벤션의 장점과 단점
+
+id와 class를 나누어 사용하는 컨벤션을 사용한다면 CSS를 바꾸거나, 로직을 변경할 때 id 혹은 class를 변경해도 영향을 덜 준다는 장점이 있습니다. 단점으로는 불 필요한 id와 class를 만들어 사용하는 경우가 있겠습니다.
+
+#### id와 class의 네이밍 규칙
+
+HTML의 id, class 모두 케밥 케이스로 통일하게 되었습니다. 이유는 HTML에서 작성하는 코드이므로 HTML의 네이밍 컨벤션을 통해 일관성을 지키려고 하였습니다.
+
+```html
+<div id="first-card-number" class="card-number">hello</div>
+<div id="second-card-number" class="card-number">hello</div>
+<div id="third-card-number" class="card-number last-card-numebr">hello</div>
+```
+
 ## CSS
 
 ## Javascript
 
 1. [상수](#상수)
-1. [함수](#함수)
-1. [메서드](#메서드)
+1. [function 함수와 arrow 함수를 사용하는 기준](#function-함수와-arrow-함수를-사용하는-기준)
+1. [class, object에서 함수 선언식 메서드와 화살표 메서드](#class,-object에서-함수-선언식-메서드와-화살표-메서드)
 
 ### 상수
 
@@ -42,9 +68,7 @@ const TAB_INDEX = {
 const { FIRST, SECOND, THIRD } = TAB_INDEX;
 ```
 
-### 함수
-
-#### function 함수와 arrow 함수를 사용하는 기준
+### function 함수와 arrow 함수를 사용하는 기준
 
 아래와 같은 이유로 함수라면 arrow 함수를 사용합니다.
 
@@ -66,7 +90,7 @@ const add = (a, b) => {
 };
 ```
 
-#### class, object에서 함수 선언식 메서드와 화살표 메서드
+### class, object에서 함수 선언식 메서드와 화살표 메서드
 
 1. 클래스에서는 선언식을 사용하도록 합시다. 이유는 덮어씌우는 것을 따로 생각해야 해서 개발자가 의도한 것과 다른 동작이 일어날 수 있습니다.
 1. 클래스에서는 속도 또한 일반 함수 선언식이 화살표 함수보다 더 빠르다고 합니다.
