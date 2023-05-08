@@ -5,6 +5,7 @@ HTML, CSS, JAVASCRIPT에 관련된 규칙을 정리한 문서입니다.
 1. [HTML](#HTML)
 1. [CSS](#CSS)
 1. [Javascript](#Javascript)
+1. [Typescript](#Typescript)
 
 ## HTML
 
@@ -40,7 +41,7 @@ HTML의 id, class 모두 케밥 케이스로 통일하게 되었습니다. 이�
 
 1. [상수](#상수)
 1. [function 함수와 arrow 함수를 사용하는 기준](#function-함수와-arrow-함수를-사용하는-기준)
-1. [class, object에서 함수 선언식 메서드와 화살표 메서드](#class,-object에서-함수-선언식-메서드와-화살표-메서드)
+1. [class, object에서 함수 선언식 메서드와 화살표 메서드](#class-object에서-함수-선언식-메서드와-화살표-메서드)
 
 ### 상수
 
@@ -151,5 +152,41 @@ class A {
   addEventClick() {
     $("card").addEventListener("click", handleClick.bind(this));
   }
+}
+```
+
+## Typescript
+
+1. [Type과 Interface의 사용](#Type과-Interface의-사용)
+
+### Type과 Interface의 사용
+
+#### Type
+
+1. 유니온, 인터섹션 타입 및 조건부 타입과 같은 사용자 정의 유형
+
+2. 별칭을 사용하여 코드를 더 쉽게 읽을 수 있게 하거나 이해하기 쉽게 만드는 경우
+
+### Interface
+
+1. 클래스에서의 객체 유형을 확장하거나 구현해야 하는 경우
+
+2. 함수의 매개 변수 및 반환 유형을 설명해야 하는 경우
+
+3. 클래스의 공용 API를 설명해야 하는 경우
+
+```ts
+// bad
+
+interface Teemo extends Champion {
+  name: "티모" | "Teemo";
+}
+
+// good
+
+type TeemoName = "티모" | "Teemo";
+
+interface Teemo extends Champion {
+  name: TeemoName;
 }
 ```
