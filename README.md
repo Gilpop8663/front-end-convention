@@ -6,6 +6,7 @@ HTML, CSS, JAVASCRIPT에 관련된 규칙을 정리한 문서입니다.
 1. [CSS](#CSS)
 1. [Javascript](#Javascript)
 1. [Typescript](#Typescript)
+1. [StyledComponents](#StyledComponents)
 
 ## HTML
 
@@ -190,3 +191,34 @@ interface Teemo extends Champion {
   name: TeemoName;
 }
 ```
+
+## StyledComponents
+
+1. [StyledComponents의 네이밍 컨벤션](#StyledComponents의-네이밍-컨벤션)
+1. [StyledComponents의 파일 분리](#StyledComponents의-파일-분리)
+
+### StyledComponents의 네이밍 컨벤션
+
+- S.라는 접두어를 붙힌다.
+
+```jsx
+<S.Wrapper></S.Wrapper>
+```
+
+- Container는 가장 밖에 위치한다.
+- CSS 속성이 없다면 Styled를 사용하지 않고 HTML 태그를 사용한다.
+
+```html
+<div></div>
+```
+
+- Wrapper가 필요하다면 확장해서 사용한다.
+
+```jsx
+const ButtonWrapper = styled(Button)``;
+```
+
+### StyledComponents의 파일 분리
+
+- Styled Components의 코드는 사용하는 파일명.style.ts로 만든다.
+- import는 \* as S로 불러온다.
